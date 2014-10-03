@@ -7,10 +7,11 @@
     <script type="text/goml">
       <goml>
         <head>
-          <geo id="player" type="Sphere" param="3 3 3" />
-          <mtl id="player-mtl" type="MeshLambert" param="color: #55e;ambient: #55e;" />
+          <geo id="unit-geo" type="Cube" param="5 5 5" />
+          <mtl id="unit-mtl" type="MeshLambert" param="color: #55e;ambient: #55e;" />
 
-          <mtl id="bullet-mtl" type="MeshLambert" param="color: #e55;ambient: #e55;" />
+          <geo id="cursor-geo" type="Sphere" param="4 1.5 4" />
+          <mtl id="cursor-mtl" type="MeshLambert" param="color: #e55;ambient: #e55;" />
 
           <geo id="block" type="Cube" param="4 4 4" />
           <mtl id="block-mtl" type="MeshLambert" param="color: #9a9;ambient: #aaa;" />
@@ -35,12 +36,19 @@
               <mesh geo="[type='Circle']" mtl="#ground-mtl" style="positionY: -.5; rotateX: -1.57;" />
             </obj>
 
+            <obj id="cursor" style="rotateY: 0; position: 100 0 0;">
+              <mesh geo="#cursor-geo" mtl="#cursor-mtl" />
+            </obj>
+
+            <obj id="unit1" style="rotateY: 0; position: 0 -30 0;">
+              <mesh geo="#unit-geo" mtl="#unit-mtl" />
+            </obj>
 
             <light type="Amb" style="light-color: #f0f0f0;" />
             <light type="Dir" style="light-color: #5a5a5a; position: 1 1 1;" />
             <light type="Dir" style="light-color: #5a5a5a; position: -1 1 1;" />
 
-            <camera style="position: 0 15 40; lookAtY: 15;"/>
+            <camera style="position: 0 10 0; lookAtY: -20;"/>
           </scene>
         </body>
       </goml>
@@ -53,6 +61,7 @@
     <script src="plugin/jThree.Trackball.js"></script>
     <script src="plugin/jThree.FlyView.js"></script>
     <script src="http://cdn.mlkcca.com/v0.2.8/milkcocoa.js"></script>
+    <script src="js/rts.js"></script>
   </head>
   <body>
   </body>
