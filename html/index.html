@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>２時間で作るRTS(Real-Time-Strategy)ゲーム</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/play.css">
+    <script type="text/goml">
+      <goml>
+        <head>
+          <geo id="player" type="Sphere" param="3 3 3" />
+          <mtl id="player-mtl" type="MeshLambert" param="color: #55e;ambient: #55e;" />
+
+          <mtl id="bullet-mtl" type="MeshLambert" param="color: #e55;ambient: #e55;" />
+
+          <geo id="block" type="Cube" param="4 4 4" />
+          <mtl id="block-mtl" type="MeshLambert" param="color: #9a9;ambient: #aaa;" />
+
+          <geo id="sky" type="Sphere" param="200 64 64" />
+          <txr id="blueSky" src="data/img/sky.png" />
+          <mtl id="sky-mtl" type="MeshPhong" param="map: #blueSky; side: 2;"/>
+
+          <geo type="Circle" param="200 64" />
+          <txr id="groundTxr" src="data/img/ground.jpg" param="repeat: 50; wrap: 0;" />
+          <mtl id="ground-mtl" type="MeshLambert" param="map: #groundTxr;"/>
+
+          <rdr />
+        </head>
+        <body>
+          <scene>
+
+            <!-- If you want to use the STL data, load jThree.STL.js and add <mesh geo="STLFile URL" mtl="css selector" /> -->
+
+            <obj style="rotateY: 1.57; position: 0 -35 0;">
+              <mesh geo="#sky" mtl="#sky-mtl" />
+              <mesh geo="[type='Circle']" mtl="#ground-mtl" style="positionY: -.5; rotateX: -1.57;" />
+            </obj>
+
+
+            <light type="Amb" style="light-color: #f0f0f0;" />
+            <light type="Dir" style="light-color: #5a5a5a; position: 1 1 1;" />
+            <light type="Dir" style="light-color: #5a5a5a; position: -1 1 1;" />
+
+            <camera style="position: 0 15 40; lookAtY: 15;"/>
+          </scene>
+        </body>
+      </goml>
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="script/jThree.min.js"></script>
+    <script src="plugin/ammo.js"></script>
+    <script src="plugin/jThree.XFile.js"></script>
+    <script src="plugin/jThree.Stats.js"></script>
+    <script src="plugin/jThree.Trackball.js"></script>
+    <script src="plugin/jThree.FlyView.js"></script>
+    <script src="http://cdn.mlkcca.com/v0.2.8/milkcocoa.js"></script>
+  </head>
+  <body>
+  </body>
+</html>

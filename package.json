@@ -1,0 +1,26 @@
+{
+  "name": "2hour-rts",
+  "version": "0.0.1",
+  "description": "２時間で作るRTS(Real-Time-Strategy)ゲーム",
+  "main": "gulpfile.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gulp-install": "^0.2.0",
+    "gulp-watch": "*",
+    "gulp": "~3.8.7",
+    "gulp-webserver": "*",
+    "gulp-compass": "~1.3.1",
+    "gulp-connect": "~2.0.6",
+    "gulp-plumber": "*",
+    "gulp-install": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/syuhei176/2hour-rts.git"
+  },
+  "author": ""
+}
